@@ -16,21 +16,14 @@ app.get('/test', (req, res) => {
   res.send("TEST WORKING");
 });
 
-// ===== MIDDLEWARE =====
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: true,
   credentials: true
 }));
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/api/health', (req, res) => {
-  res.json({
-    success: true,
-    message: "🚀 AI Todo API is running!"
-  });
-});
 
 // ===== HEALTH CHECK =====
 app.get('/api/health', (req, res) => {
