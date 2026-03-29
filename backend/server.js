@@ -12,6 +12,10 @@ connectDB();
 
 const app = express();
 
+app.get('/test', (req, res) => {
+  res.send("TEST WORKING");
+});
+
 // ===== MIDDLEWARE =====
 app.use(cors({
   origin: process.env.CLIENT_URL || 'http://localhost:5173',
