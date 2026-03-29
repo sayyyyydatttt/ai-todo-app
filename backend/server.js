@@ -41,11 +41,26 @@ app.use('/api', (req, res, next) => {
   console.log("API HIT:", req.originalUrl);
   next();
 });
-// ===== ROUTES =====
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/tasks', require('./routes/tasks'));
-app.use('/api/ai', require('./routes/ai'));
 
+// ===== ROUTES =====
+
+// Debug logs
+console.log("Loading routes...");
+
+// Auth routes
+const authRoutes = require('./routes/auth');
+console.log("Auth routes loaded:", typeof authRoutes);
+app.use('/api/auth', authRoutes);
+
+// Task routes
+const taskRoutes = require('./routes/tasks');
+console.log("Task routes loaded:", typeof taskRoutes);
+app.use('/api/tasks', taskRoutes);
+
+// AI routes
+const aiRoutes = require('./routes/ai');
+console.log("AI routes loaded:", typeof aiRoutes);
+app.use('/api/ai', aiRoutes);
 
 
 // ===== 404 HANDLER =====
