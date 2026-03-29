@@ -11,6 +11,9 @@ dotenv.config();
 connectDB();
 
 const app = express();
+app.get('/', (req, res) => {
+  res.send("Backend is LIVE 🚀");
+});
 
 app.get('/test', (req, res) => {
   res.send("TEST WORKING");
