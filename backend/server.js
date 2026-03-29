@@ -37,7 +37,10 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-
+app.use('/api', (req, res, next) => {
+  console.log("API HIT:", req.originalUrl);
+  next();
+});
 // ===== ROUTES =====
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/tasks', require('./routes/tasks'));
