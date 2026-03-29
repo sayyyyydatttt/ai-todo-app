@@ -28,11 +28,6 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// ===== ROUTES =====
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/tasks', require('./routes/tasks'));
-app.use('/api/ai', require('./routes/ai'));
-
 // ===== HEALTH CHECK =====
 app.get('/api/health', (req, res) => {
   res.json({
@@ -41,6 +36,14 @@ app.get('/api/health', (req, res) => {
     timestamp: new Date().toISOString()
   });
 });
+
+
+// ===== ROUTES =====
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/tasks', require('./routes/tasks'));
+app.use('/api/ai', require('./routes/ai'));
+
+
 
 // ===== 404 HANDLER =====
 app.use((req, res) => {
