@@ -21,6 +21,13 @@ app.use(cors({
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/api/health', (req, res) => {
+  res.json({
+    success: true,
+    message: "🚀 AI Todo API is running!"
+  });
+});
+
 // ===== ROUTES =====
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/tasks', require('./routes/tasks'));
