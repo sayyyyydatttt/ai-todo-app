@@ -4,7 +4,7 @@ import { useTasks } from '../context/TaskContext';
 import {
   LayoutDashboard, CheckSquare, Calendar, Timer,
   BarChart2, Tag, LogOut, Sparkles, Menu, X,
-  Pin, Settings
+  Pin, Settings, User
 } from 'lucide-react';
 
 const navItems = [
