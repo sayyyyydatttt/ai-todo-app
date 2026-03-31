@@ -15,6 +15,7 @@ const navItems = [
   { id: 'pomodoro',  label: 'Pomodoro',   icon: Timer },
   { id: 'stats',     label: 'Statistics', icon: BarChart2 },
   { id: 'categories',label: 'Categories', icon: Tag },
+  { id: 'about',     label: 'About Us',   icon: User },
 ];
 
 export default function Sidebar({ activePage, setActivePage }) {

@@ -1,3 +1,4 @@
+import AboutModal from '../components/AboutModal';
 import { exportAsText, exportAsPDF } from '../utils/exportTasks';
 import CalendarView from './Calendar';
 import { Download } from 'lucide-react';
@@ -55,9 +56,17 @@ export default function Dashboard() {
   const [moodData,      setMoodData]      = useState(null);
   const [loadingMood,   setLoadingMood]   = useState(false);
   const [selectedMood,  setSelectedMood]  = useState(null);
+  const [showAbout, setShowAbout] = useState(false);
 
   // Load tasks on mount and filter change
   useEffect(() => { fetchTasks(); }, []);
+
+  useEffect(() => {
+  if (activePage === 'about') {
+    setShowAbout(true);
+    setActivePage('dashboard');
+  }
+}, [activePage]);
 
   // Search with debounce
   useEffect(() => {
@@ -346,6 +355,10 @@ export default function Dashboard() {
       {showAddModal && (
         <AddTaskModal onClose={handleCloseModal} editTask={editTask} />
       )}
+
+      {showAbout && (
+  <AboutModal onClose={() => setShowAbout(false)} />
+)}
 
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
     </div>
