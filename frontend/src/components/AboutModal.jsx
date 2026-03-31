@@ -38,7 +38,7 @@ export default function AboutModal({ onClose }) {
           </div>
 
           <h2 style={{ fontSize: '26px', fontWeight: 800, marginBottom: '6px' }}>
-            <span className="text-gradient">Your Name Here</span>
+            <span className="text-gradient">Suryansh Thakur</span>
           </h2>
 
           <div style={{
