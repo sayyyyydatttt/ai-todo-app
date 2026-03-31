@@ -1,4 +1,4 @@
-import { X, Github, Linkedin, Mail, Code2, Sparkles, GraduationCap, Heart } from 'lucide-react';
+import { X, Code2, Sparkles, GraduationCap, Heart } from 'lucide-react';
 
 export default function AboutModal({ onClose }) {
   return (
